@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Bookings | Red King Tours</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        red: {
+                            king: '#dc2626',
+                            dark: '#991b1b',
+                        },
+                        dark: '#111827',
+                        gold: '#d4af37',
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .page-header {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1582610116397-edb318620f90?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-dark/95 backdrop-blur-md border-b border-gray-800 transition-all py-2">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.location.href='index.html'">
+                    <i class="fa-solid fa-crown text-red-king text-2xl"></i>
+                    <span class="font-serif font-bold text-xl text-white tracking-wider">RED KING <span class="text-red-king">TOURS</span></span>
+                </div>
+                <!-- Desktop -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-gray-300 hover:text-white hover:text-red-king transition font-medium">Home</a>
+                    <a href="vehicles.html" class="text-gray-300 hover:text-white hover:text-red-king transition font-medium">Vehicles & Hires</a>
+                    <a href="hotels.html" class="text-red-king font-medium border-b-2 border-red-king pb-1">Hotel Booking</a>
+                    <a href="contact.html" class="text-gray-300 hover:text-white hover:text-red-king transition font-medium">Contact</a>
+                    <a href="contact.html" class="bg-red-king hover:bg-red-dark text-white px-5 py-2 rounded-full font-medium transition shadow-lg text-sm">Book Hotel</a>
+                </div>
+                <!-- Mobile Btn -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark border-t border-gray-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md font-medium">Home</a>
+                <a href="vehicles.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md font-medium">Vehicles & Hires</a>
+                <a href="hotels.html" class="bg-gray-900 text-white block px-3 py-2 rounded-md font-medium">Hotel Booking</a>
+                <a href="contact.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Page Header -->
+    <div class="page-header pt-32 pb-24 text-center px-4">
+        <h1 class="text-4xl md:text-6xl font-serif font-bold text-white mb-4">Stay in Paradise</h1>
+        <p class="text-gray-300 max-w-2xl mx-auto text-lg mb-8">
+            Access exclusive rates and partnerships with the finest hotels, villas, and resorts across Sri Lanka through Red King Tours.
+        </p>
+    </div>
+    <!-- Partner Hotels Categories -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-red-king font-bold tracking-wider uppercase text-sm">Accommodation Types</span>
+                <h2 class="text-3xl font-serif font-bold text-gray-900 mt-2">Curated Stays Just For You</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Category 1 -->
+                <div class="relative rounded-2xl overflow-hidden group h-96 cursor-pointer" onclick="window.location.href='contact.html?hotel=luxury'">
+                    <img src="https://images.unsplash.com/photo-1542314831-c6a4d1409b1c?q=80&w=2070&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Luxury Resorts">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6 w-full">
+                        <div class="flex text-gold mb-2 text-sm justify-center md:justify-start">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-1">Luxury Resorts</h3>
+                        <p class="text-gray-300 text-sm">5-Star experiences in Colombo, South Coast & Cultural Triangle.</p>
+                        <span class="inline-block mt-3 text-red-400 font-medium text-sm group-hover:text-red-300 transition">Inquire Rates &rarr;</span>
+                    </div>
+                </div>
+                <!-- Category 2 -->
+                <div class="relative rounded-2xl overflow-hidden group h-96 cursor-pointer" onclick="window.location.href='contact.html?hotel=boutique'">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Boutique Villas">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6 w-full">
+                        <h3 class="text-2xl font-bold text-white mb-1">Boutique Villas</h3>
+                        <p class="text-gray-300 text-sm">Intimate, unique architectures hidden in the Tea Country and Galle Fort.</p>
+                        <span class="inline-block mt-3 text-red-400 font-medium text-sm group-hover:text-red-300 transition">Inquire Rates &rarr;</span>
+                    </div>
+                </div>
+                <!-- Category 3 -->
+                <div class="relative rounded-2xl overflow-hidden group h-96 cursor-pointer" onclick="window.location.href='contact.html?hotel=eco'">
+                    <img src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?q=80&w=2070&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Eco Lodges">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6 w-full">
+                        <h3 class="text-2xl font-bold text-white mb-1">Eco Lodges & Glamping</h3>
+                        <p class="text-gray-300 text-sm">Nature-immersed stays near Yala, Wilpattu, and Ella.</p>
+                        <span class="inline-block mt-3 text-red-400 font-medium text-sm group-hover:text-red-300 transition">Inquire Rates &rarr;</span>
+                    </div>
+                </div>
+                <!-- Category 4 -->
+                <div class="relative rounded-2xl overflow-hidden group h-96 cursor-pointer" onclick="window.location.href='contact.html?hotel=budget'">
+                    <img src="https://images.unsplash.com/photo-1551882547-ff40c0d129df?q=80&w=1964&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Standard Hotels">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6 w-full">
+                        <h3 class="text-2xl font-bold text-white mb-1">Comfort Stays</h3>
+                        <p class="text-gray-300 text-sm">Clean, beautiful 3/4-star hotels perfect for friendly budget tours.</p>
+                        <span class="inline-block mt-3 text-red-400 font-medium text-sm group-hover:text-red-300 transition">Inquire Rates &rarr;</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Call to action -->
+    <section class="bg-gray-900 text-white py-16">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <i class="fa-solid fa-bed text-5xl text-red-king mb-6"></i>
+            <h2 class="text-3xl font-serif font-bold mb-4">Let Us Find Your Perfect Room</h2>
+            <p class="text-gray-400 mb-8">
+                Don't stress over booking platforms. Tell us your preference and budget, and Red King Tours will arrange the perfect accommodation at negotiated local rates, seamlessly integrated into your travel itinerary.
+            </p>
+            <a href="contact.html" class="bg-red-king text-white px-8 py-3 rounded-full font-bold hover:bg-red-700 transition">Contact Hotel Bookings</a>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-dark text-gray-300 py-12 border-t border-gray-800 text-center">
+        <p>&copy; 2024 Red King Tours Sri Lanka. All rights reserved.</p>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Vehicles & Hires | Red King Tours</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        red: {
+                            king: '#dc2626',
+                            dark: '#991b1b',
+                            light: '#f87171'
+                        },
+                        dark: '#111827',
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .page-header {
+            background-image: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.9)), url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        .vehicle-card:hover .vehicle-img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased selection:bg-red-king selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-dark/95 backdrop-blur-md border-b border-gray-800 transition-all py-2">
+        <!-- Exact Same Nav as Index -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.location.href='index.html'">
+                    <i class="fa-solid fa-crown text-red-king text-2xl"></i>
+                    <span class="font-serif font-bold text-xl text-white tracking-wider">RED KING <span class="text-red-king">TOURS</span></span>
+                </div>
+                <!-- Desktop -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-gray-300 hover:text-white hover:text-red-king transition font-medium">Home</a>
+                    <a href="vehicles.html" class="text-red-king font-medium border-b-2 border-red-king pb-1">Vehicles & Hires</a>
+                    <a href="hotels.html" class="text-gray-300 hover:text-white hover:text-red-king transition font-medium">Hotel Booking</a>
+                    <a href="contact.html" class="text-gray-300 hover:text-white hover:text-red-king transition font-medium">Contact</a>
+                    <a href="contact.html" class="bg-red-king hover:bg-red-dark text-white px-5 py-2 rounded-full font-medium transition shadow-lg shadow-red-king/30 text-sm">Book Vehicle</a>
+                </div>
+                <!-- Mobile Btn -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark border-t border-gray-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md font-medium">Home</a>
+                <a href="vehicles.html" class="bg-gray-900 text-white block px-3 py-2 rounded-md font-medium">Vehicles & Hires</a>
+                <a href="hotels.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md font-medium">Hotel Booking</a>
+                <a href="contact.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header pt-32 pb-24 text-center px-4">
+        <h1 class="text-4xl md:text-6xl font-serif font-bold text-white mb-4">Our Premium Fleet</h1>
+        <p class="text-gray-300 max-w-2xl mx-auto text-lg">
+            Travel across Sri Lanka in comfort and style. From luxury cars for couples to spacious coaches for groups, we have the perfect ride for your journey.
+        </p>
+    </div>
+
+    <!-- Info Banner -->
+    <div class="bg-red-king text-white py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center text-sm font-medium">
+            <div class="flex items-center gap-2 mb-2 sm:mb-0"><i class="fa-solid fa-check-circle"></i> Air-Conditioned Fleet</div>
+            <div class="flex items-center gap-2 mb-2 sm:mb-0"><i class="fa-solid fa-user-tie"></i> Professional English-Speaking Drivers</div>
+            <div class="flex items-center gap-2"><i class="fa-solid fa-shield-halved"></i> Fully Insured & Safe</div>
+        </div>
+    </div>
+
+    <!-- Vehicles List -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Category: Cars -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-serif font-bold text-gray-900 mb-2 border-l-4 border-red-king pl-4">Luxury & Sedan Cars</h2>
+                <p class="text-gray-600 mb-8 ml-5">Perfect for couples, solo travelers, or business trips.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Car 1 -->
+                    <div class="bg-white rounded-2xl shadow-md overflow-hidden vehicle-card border border-gray-100">
+                        <div class="h-60 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1550355291-bbee04a92027?q=80&w=1936&auto=format&fit=crop" class="w-full h-full object-cover vehicle-img transition duration-500" alt="Prius/Sedan">
+                            <div class="absolute top-4 right-4 bg-white/90 backdrop-blur text-gray-900 text-xs font-bold px-3 py-1 rounded-full"><i class="fa-solid fa-user"></i> Up to 3 Pax</div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Toyota Prius / Axio</h3>
+                            <ul class="text-sm text-gray-600 space-y-2 mb-6">
+                                <li><i class="fa-solid fa-snowflake text-red-king w-5"></i> Fully Air-Conditioned</li>
+                                <li><i class="fa-solid fa-suitcase text-red-king w-5"></i> 2 Large Baggage Capacity</li>
+                                <li><i class="fa-solid fa-wifi text-red-king w-5"></i> Free Wi-Fi Available</li>
+                            </ul>
+                            <div class="flex justify-between items-center border-t pt-4">
+                                <span class="text-sm font-bold text-gray-500">Local & Tour Hires</span>
+                                <a href="contact.html?vehicle=car" class="text-red-king font-bold hover:text-red-dark transition">Inquire Now <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Car 2 -->
+                    <div class="bg-white rounded-2xl shadow-md overflow-hidden vehicle-card border border-gray-100">
+                        <div class="h-60 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover vehicle-img transition duration-500" alt="Luxury Car">
+                            <div class="absolute top-4 right-4 bg-white/90 backdrop-blur text-gray-900 text-xs font-bold px-3 py-1 rounded-full"><i class="fa-solid fa-user"></i> Up to 3 Pax</div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Mercedes Benz E-Class / BMW</h3>
+                            <ul class="text-sm text-gray-600 space-y-2 mb-6">
+                                <li><i class="fa-solid fa-snowflake text-red-king w-5"></i> Premium Climate Control</li>
+                                <li><i class="fa-solid fa-couch text-red-king w-5"></i> Leather Luxury Seating</li>
+                                <li><i class="fa-solid fa-star text-red-king w-5"></i> VIP Transport Level</li>
+                            </ul>
+                            <div class="flex justify-between items-center border-t pt-4">
+                                <span class="text-sm font-bold text-gray-500">Premium / VIP Hire</span>
+                                <a href="contact.html?vehicle=luxury" class="text-red-king font-bold hover:text-red-dark transition">Inquire Now <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category: Vans -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-serif font-bold text-gray-900 mb-2 border-l-4 border-red-king pl-4">Vans & SUVs</h2>
+                <p class="text-gray-600 mb-8 ml-5">Ideal for families and small groups wanting extra space and comfort.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Van 1 -->
+                    <div class="bg-white rounded-2xl shadow-md overflow-hidden vehicle-card border border-gray-100">
+                        <div class="h-60 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?q=80&w=1974&auto=format&fit=crop" class="w-full h-full object-cover vehicle-img transition duration-500" alt="KDH Van">
+                            <div class="absolute top-4 right-4 bg-white/90 backdrop-blur text-gray-900 text-xs font-bold px-3 py-1 rounded-full"><i class="fa-solid fa-user"></i> 6 - 9 Pax</div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Toyota KDH / Hiace (Flat Roof)</h3>
+                            <ul class="text-sm text-gray-600 space-y-2 mb-6">
+                                <li><i class="fa-solid fa-snowflake text-red-king w-5"></i> Dual A/C</li>
+                                <li><i class="fa-solid fa-suitcase text-red-king w-5"></i> Ample Luggage Space</li>
+                                <li><i class="fa-solid fa-chair text-red-king w-5"></i> Adjustable & Comfortable Seats</li>
+                            </ul>
+                            <div class="flex justify-between items-center border-t pt-4">
+                                <span class="text-sm font-bold text-gray-500">Family Standard</span>
+                                <a href="contact.html?vehicle=kdh" class="text-red-king font-bold hover:text-red-dark transition">Inquire Now <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SUV 1 -->
+                    <div class="bg-white rounded-2xl shadow-md overflow-hidden vehicle-card border border-gray-100">
+                        <div class="h-60 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover vehicle-img transition duration-500" alt="SUV">
+                            <div class="absolute top-4 right-4 bg-white/90 backdrop-blur text-gray-900 text-xs font-bold px-3 py-1 rounded-full"><i class="fa-solid fa-user"></i> 4 Pax</div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Toyota Land Cruiser / Prado</h3>
+                            <ul class="text-sm text-gray-600 space-y-2 mb-6">
+                                <li><i class="fa-solid fa-mountain text-red-king w-5"></i> Perfect for Upcountry & Safaris</li>
+                                <li><i class="fa-solid fa-shield text-red-king w-5"></i> Premium Safety</li>
+                                <li><i class="fa-solid fa-couch text-red-king w-5"></i> High-End Comfort</li>
+                            </ul>
+                            <div class="flex justify-between items-center border-t pt-4">
+                                <span class="text-sm font-bold text-gray-500">Premium SUV</span>
+                                <a href="contact.html?vehicle=suv" class="text-red-king font-bold hover:text-red-dark transition">Inquire Now <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pricing/Info Section -->
+            <div class="bg-gray-100 rounded-3xl p-8 md:p-12 text-center mt-12 border border-gray-200">
+                <h3 class="text-2xl font-serif font-bold text-gray-900 mb-4">Need a customized transport solution?</h3>
+                <p class="text-gray-600 max-w-2xl mx-auto mb-8">
+                    Whether you need a simple airport transfer, a localized hire within Colombo/Kandy, or a multi-day island-wide transport with a dedicated driver-guide, Red King Tours has you covered. Prices depend on mileage, days, and vehicle type.
+                </p>
+                <a href="contact.html" class="inline-block bg-red-king text-white px-8 py-4 rounded-full font-bold hover:bg-red-dark transition shadow-lg">Request a Transport Quote</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer (Included) -->
+    <footer class="bg-dark text-gray-300 py-12 border-t border-gray-800 text-center">
+        <p>&copy; 2024 Red King Tours Sri Lanka. All rights reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

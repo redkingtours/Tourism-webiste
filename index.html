@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red King Tours | Explore Sri Lanka</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        red: {
+                            king: '#dc2626',
+                            dark: '#991b1b',
+                            light: '#f87171'
+                        },
+                        dark: '#111827',
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background-image: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?q=80&w=2039&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .glass-nav {
+            background: rgba(17, 24, 39, 0.85);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased selection:bg-red-king selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav border-b border-gray-800 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.location.href='index.html'">
+                    <i class="fa-solid fa-crown text-red-king text-3xl"></i>
+                    <span class="font-serif font-bold text-2xl text-white tracking-wider">RED KING <span class="text-red-king">TOURS</span></span>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-red-king font-medium border-b-2 border-red-king pb-1">Home</a>
+                    <a href="vehicles.html" class="text-gray-300 hover:text-white hover:text-red-king transition font-medium">Vehicles & Hires</a>
+                    <a href="hotels.html" class="text-gray-300 hover:text-white hover:text-red-king transition font-medium">Hotel Booking</a>
+                    <a href="contact.html" class="text-gray-300 hover:text-white hover:text-red-king transition font-medium">Contact</a>
+                    <a href="contact.html" class="bg-red-king hover:bg-red-dark text-white px-6 py-2.5 rounded-full font-medium transition shadow-lg shadow-red-king/30">Book Now</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark border-t border-gray-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="bg-gray-900 text-white block px-3 py-2 rounded-md font-medium">Home</a>
+                <a href="vehicles.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md font-medium">Vehicles & Hires</a>
+                <a href="hotels.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md font-medium">Hotel Booking</a>
+                <a href="contact.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="relative min-h-screen flex items-center justify-center hero-bg">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-dark/90"></div>
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto pt-20">
+            <span class="text-red-king font-bold tracking-widest uppercase mb-4 block text-sm sm:text-base">Welcome to the Pearl of the Indian Ocean</span>
+            <h1 class="text-5xl sm:text-7xl font-serif font-bold text-white mb-6 leading-tight">
+                Discover Sri Lanka with <br/> <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-king to-red-400">Red King Tours</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-gray-200 mb-10 max-w-2xl mx-auto font-light">
+                Premium transport, luxury hotel bookings, and unforgettable tour experiences tailored just for you.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="vehicles.html" class="bg-red-king hover:bg-red-dark text-white px-8 py-4 rounded-full font-semibold text-lg transition shadow-lg shadow-red-king/40 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-car"></i> Explore Vehicles
+                </a>
+                <a href="contact.html" class="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white px-8 py-4 rounded-full font-semibold text-lg transition flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-route"></i> Plan Your Tour
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#about" class="text-white/70 hover:text-white transition">
+                <i class="fa-solid fa-chevron-down text-3xl"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- About Sri Lanka & Us -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-red-king/10 rounded-3xl transform -rotate-3"></div>
+                    <img src="https://images.unsplash.com/photo-1586220668709-3286fdf06148?q=80&w=1974&auto=format&fit=crop" alt="Sri Lanka Tour" class="relative rounded-3xl shadow-2xl object-cover h-[500px] w-full">
+                    <div class="absolute -bottom-8 -right-8 bg-white p-6 rounded-2xl shadow-xl flex items-center gap-4 hidden md:flex">
+                        <div class="bg-red-king text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl font-bold">
+                            10+
+                        </div>
+                        <div>
+                            <p class="font-bold text-gray-900">Years Experience</p>
+                            <p class="text-sm text-gray-500">In SL Tourism</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <span class="text-red-king font-bold tracking-wider uppercase text-sm">Why Choose Us</span>
+                    <h2 class="text-4xl font-serif font-bold text-gray-900 mt-2 mb-6">Experience the Best of Sri Lanka</h2>
+                    <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+                        At <strong class="text-gray-900">Red King Tours</strong>, we don't just provide tours; we create lifelong memories. Whether you're looking to explore ancient ruins, relax on pristine beaches, or encounter exotic wildlife, our fleet of premium vehicles and expert local guides are at your service.
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check-circle text-red-king mt-1 text-xl"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Extensive Fleet</h4>
+                                <p class="text-gray-600 text-sm">Luxury cars, comfortable vans, and spacious buses for any group size.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check-circle text-red-king mt-1 text-xl"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Local & Airport Hires</h4>
+                                <p class="text-gray-600 text-sm">Reliable pickups, drops, and personalized local hires across the country.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check-circle text-red-king mt-1 text-xl"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Hotel Partnerships</h4>
+                                <p class="text-gray-600 text-sm">Exclusive rates at top-rated hotels, resorts, and villas in Sri Lanka.</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <a href="contact.html" class="inline-flex items-center gap-2 text-red-king font-bold hover:text-red-dark transition group">
+                        Learn more about our packages 
+                        <i class="fa-solid fa-arrow-right transform group-hover:translate-x-2 transition"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-red-king font-bold tracking-wider uppercase text-sm">Our Services</span>
+                <h2 class="text-4xl font-serif font-bold text-gray-900 mt-2">Everything You Need For The Perfect Trip</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white rounded-3xl p-8 shadow-lg border border-gray-100 card-hover">
+                    <div class="w-16 h-16 bg-red-50 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-van-shuttle text-3xl text-red-king"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Tour Vehicles & Hires</h3>
+                    <p class="text-gray-600 mb-6 line-clamp-3">
+                        Need a ride for a day or a whole week? We offer comfortable cars, vans (like KDH), and coaches with experienced drivers for island-wide tours and local hires.
+                    </p>
+                    <a href="vehicles.html" class="text-red-king font-medium hover:text-red-dark transition">View Fleet &rarr;</a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white rounded-3xl p-8 shadow-lg border border-gray-100 card-hover">
+                    <div class="w-16 h-16 bg-red-50 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-hotel text-3xl text-red-king"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Hotel Bookings</h3>
+                    <p class="text-gray-600 mb-6 line-clamp-3">
+                        From luxury beachfront resorts in Mirissa to secluded boutique hotels in Ella, we handle all your accommodation needs with the best negotiated rates.
+                    </p>
+                    <a href="hotels.html" class="text-red-king font-medium hover:text-red-dark transition">Browse Hotels &rarr;</a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white rounded-3xl p-8 shadow-lg border border-gray-100 card-hover text-white relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-dark z-0"></div>
+                    <img src="https://images.unsplash.com/photo-1533221990429-2313d42e20b3?q=80&w=1964&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 transition duration-500 z-0" alt="Tour Packages">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/80 to-transparent z-10"></div>
+                    
+                    <div class="relative z-20 h-full flex flex-col justify-end">
+                        <div class="w-16 h-16 bg-red-king/90 rounded-2xl flex items-center justify-center mb-6 backdrop-blur-sm">
+                            <i class="fa-solid fa-map-location-dot text-3xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Custom Tour Packages</h3>
+                        <p class="text-gray-300 mb-6">
+                            Tell us what you love—wildlife, beaches, culture, or tea country—and we will create a bespoke itinerary just for you.
+                        </p>
+                        <a href="contact.html" class="text-red-400 font-medium hover:text-white transition">Plan Itinerary &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 bg-red-king relative overflow-hidden">
+        <div class="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-red-700 rounded-full blur-3xl opacity-50"></div>
+        <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 bg-red-800 rounded-full blur-3xl opacity-50"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
+            <h2 class="text-4xl md:text-5xl font-serif font-bold text-white mb-6">Ready for your Sri Lankan Adventure?</h2>
+            <p class="text-red-100 text-lg mb-10 max-w-2xl mx-auto">
+                Contact us today for a free quote on vehicle rentals, hotel bookings, or a fully guided tour package.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="contact.html" class="bg-white text-red-king px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition shadow-xl">
+                    Get a Free Quote
+                </a>
+                <a href="tel:+94771234567" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-phone"></i> Call +94 77 123 4567
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-gray-300 py-16 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center gap-2 mb-6">
+                        <i class="fa-solid fa-crown text-red-king text-2xl"></i>
+                        <span class="font-serif font-bold text-xl text-white tracking-wider">RED KING <span class="text-red-king">TOURS</span></span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-6">
+                        Your trusted travel partner in Sri Lanka. We excel in providing comfortable transport, local hires, and luxury hotel accommodations.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-red-king hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-red-king hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-red-king hover:text-white transition"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="index.html" class="hover:text-red-king transition">Home</a></li>
+                        <li><a href="vehicles.html" class="hover:text-red-king transition">Vehicle Fleet</a></li>
+                        <li><a href="hotels.html" class="hover:text-red-king transition">Hotel Bookings</a></li>
+                        <li><a href="contact.html" class="hover:text-red-king transition">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6">Our Services</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-red-king transition">Airport Transfers</a></li>
+                        <li><a href="#" class="hover:text-red-king transition">Round Tours</a></li>
+                        <li><a href="#" class="hover:text-red-king transition">Local Hires / Day Tours</a></li>
+                        <li><a href="#" class="hover:text-red-king transition">Luxury Train Ticketing</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6">Contact Info</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot mt-1 text-red-king"></i>
+                            <span>123, Galle Road, Colombo 03, Sri Lanka</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-red-king"></i>
+                            <span>+94 77 123 4567</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-red-king"></i>
+                            <span>bookings@redkingtours.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-sm text-gray-500">
+                <p>&copy; 2024 Red King Tours Sri Lanka. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
